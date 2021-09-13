@@ -8,7 +8,7 @@ const db = require("./models");
   await db.sequelize.sync();
 })();
 
-
+app.use(express.json());
 app.use("/", indexRouter);
 
 app.listen(process.env.PORT || "3000", () => {

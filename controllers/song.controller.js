@@ -10,7 +10,7 @@ const SongController = {
   findById: async (req, res, next) => {
     const songId = req.params.id;
     const song = await SongService.findById(songId);
-    res.satus(200).send(song);
+    res.status(200).send(song);
   },
   findByArtist: async (req, res, next) => {
     const query = req.query.q;

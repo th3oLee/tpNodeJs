@@ -8,7 +8,7 @@ const SongRepository = {
     return Song.findAll();
   },
   findById: (id) => {
-    const song = Song.findById(id);
+    const song = Song.findByPk(id);
     return song;
   },
   findByName: (name) => {
