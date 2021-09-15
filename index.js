@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 const indexRouter = require("./routers/index");
+const { corsWithOptions } = require("./config/cors");
+
 
 const db = require("./models");
 
@@ -8,6 +10,7 @@ const db = require("./models");
   await db.sequelize.sync();
 })();
 
+app.use(corsWithOptions);
 app.use(express.json());
 app.use("/", indexRouter);
 
